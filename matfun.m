@@ -70,6 +70,8 @@ if l - ld > 1
     catch exception
         if strcmp(exception.identifier, 'MATLAB:getReshapeDims:notSameNumel') && nargin == 4
             error('OUTPUTSIZE is not consistent with the actual size of the output.');
+        else
+            error(exception.message);
         end
     end
 end 
