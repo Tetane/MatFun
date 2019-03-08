@@ -1,7 +1,20 @@
-function [ funmat ] = matfun(fun, mat, dim)
-%MATFUN Apply function to the specified dimension of the matrix
+function funmat = matfun(fun, mat, dim)
+%MATFUN Apply function to the specified dimensions of the matrix
 %   A = MATFUN(FUN, MAT, DIM) applies the function specified by FUN to the dimensions DIM of the matrix MAT.
 %   DIM is vector which maximum size is 3.
+
+% Example1:
+% A = rand(3,1000,1000);
+% % We want to compute the norm of the vector along the first dimension.
+% B = matfun(@norm, A, 1);
+% % B is a 1000x1000 matrix containing the norms of the vectors.
+
+% Example2:
+% A = rand(4,4,1000);
+% % We want apply the inverse function to all the 4x4 matrices
+% B = matfun(@inv, A, [1,2]);
+% % B is a 4x4x1000 matrix
+
 
 initmatSize = size(mat);
 l = length(initmatSize);
