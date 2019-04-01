@@ -1,5 +1,2 @@
-*
-!matfun.m
-
-*!.gitignore
-*!README.md
+*.asv
+*.mat
